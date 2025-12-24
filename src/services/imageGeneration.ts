@@ -38,13 +38,15 @@ export function buildScenePrompt(
   location: Location,
   userDescription: string
 ): string {
-  const animalDescriptions = animals.map((animal) => {
+  const animalDescriptions = animals.map((animal, index) => {
+    const hasImage = animal.portraitDataUrl || animal.stickerDataUrl;
     const parts = [
       `${animal.name} the ${animal.species.toLowerCase()}`,
-      `(${animal.colors.primary}`,
-      animal.colors.secondary ? ` with ${animal.colors.secondary} markings` : '',
-      animal.colors.markings ? `, ${animal.colors.markings}` : '',
-      `)`,
+      hasImage ? ` (shown in reference image ${index + 1})` : '',
+      !hasImage ? ` (${animal.colors.primary}` : '',
+      !hasImage && animal.colors.secondary ? ` with ${animal.colors.secondary} markings` : '',
+      !hasImage && animal.colors.markings ? `, ${animal.colors.markings}` : '',
+      !hasImage ? `)` : '',
       `, who is ${animal.personality.toLowerCase()}`,
       animal.specialThing ? ` and ${animal.specialThing}` : '',
     ];
@@ -60,6 +62,8 @@ Scene setting: ${locationDesc}.
 Characters: ${animalDescriptions}.
 
 What's happening: ${userDescription}
+
+IMPORTANT: Draw the characters to match the reference images provided. Keep their appearance consistent with the references.
 
 ${buildKidSafePromptSuffix()}`;
 
@@ -90,19 +94,31 @@ ${buildKidSafePromptSuffix()}`;
   return prompt;
 }
 
+// Get reference images from animals (portraits or stickers)
+function getAnimalImages(animals: Animal[]): string[] {
+  return animals
+    .map(animal => animal.portraitDataUrl || animal.stickerDataUrl)
+    .filter((img): img is string => !!img);
+}
+
 // ============================================
 // Main Generate Function - Server Only
 // ============================================
 export async function generateImages(
   prompt: string,
   _settings: Settings,
-  count: number = 4
+  count: number = 4,
+  referenceImages?: string[]
 ): Promise<ImageGenerationResult> {
   try {
     const response = await fetch('/api/generate-image', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt, count }),
+      body: JSON.stringify({ 
+        prompt, 
+        count,
+        referenceImages: referenceImages || []
+      }),
     });
 
     const data = await response.json();
@@ -161,7 +177,7 @@ export async function generateAnimalPortrait(
   return generateImages(prompt, settings, 1);
 }
 
-// Generate scene images
+// Generate scene images with reference images from animals
 export async function generateSceneImages(
   animals: Animal[],
   location: Location,
@@ -169,7 +185,8 @@ export async function generateSceneImages(
   settings: Settings
 ): Promise<ImageGenerationResult & { promptUsed: string }> {
   const prompt = buildScenePrompt(animals, location, description);
-  const result = await generateImages(prompt, settings, settings.imageCount);
+  const referenceImages = getAnimalImages(animals);
+  const result = await generateImages(prompt, settings, settings.imageCount, referenceImages);
   return {
     ...result,
     promptUsed: prompt,

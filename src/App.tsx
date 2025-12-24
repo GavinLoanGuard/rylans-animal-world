@@ -27,7 +27,7 @@ import { SceneViewer } from './components/SceneViewer';
 import { ParentMode } from './components/ParentMode';
 
 const DEFAULT_SETTINGS: Settings = {
-  imageModel: 'gpt-image-1',
+  imageModel: 'dall-e-3',
   imageCount: 4,
   kidSafeMode: true,
   extraGentleMode: false,
