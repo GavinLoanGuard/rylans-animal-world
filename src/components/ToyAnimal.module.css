@@ -1,0 +1,415 @@
+/* ============================================
+   Toy Animal Component Styles
+   ============================================ */
+
+.page {
+  padding: var(--space-md);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn var(--transition-medium) ease;
+}
+
+.container {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: 0 8px 32px var(--shadow-light);
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xs);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.error,
+.cameraError {
+  background: rgba(231, 76, 60, 0.1);
+  border: 2px solid rgba(231, 76, 60, 0.3);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--error);
+}
+
+.cameraError {
+  flex-direction: column;
+  text-align: center;
+}
+
+.errorIcon {
+  font-size: 1.25rem;
+}
+
+/* Camera Section */
+.cameraContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--text-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cameraOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.cameraFrame {
+  width: 80%;
+  height: 80%;
+  border: 3px dashed rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+}
+
+/* Capture Buttons */
+.captureButtons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.startCameraButton {
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--white);
+  border: 2px solid var(--teal);
+  border-radius: var(--radius-lg);
+  color: var(--teal);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.startCameraButton:hover {
+  background: var(--teal-faded);
+}
+
+.captureButton {
+  width: 100%;
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: 0 4px 12px rgba(58, 175, 169, 0.35);
+}
+
+.captureButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(58, 175, 169, 0.45);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--cream-dark);
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadButton {
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--cream-light);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.uploadButton:hover {
+  border-color: var(--gold);
+  background: var(--gold-faded);
+  color: var(--gold-dark);
+}
+
+.cancelButton {
+  width: 100%;
+  padding: var(--space-md);
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  color: var(--text-secondary);
+}
+
+/* Preview/Crop Section */
+.previewContainer {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--cream-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cropActions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.retakeButton {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--white);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.retakeButton:hover {
+  border-color: var(--text-light);
+  background: var(--cream-light);
+}
+
+.processButton {
+  flex: 2;
+  padding: var(--space-md) var(--space-lg);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: 0 4px 12px rgba(232, 184, 93, 0.35);
+}
+
+.processButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(232, 184, 93, 0.45);
+}
+
+.processButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Sticker Preview */
+.stickerPreview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+}
+
+.stickerImage {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px var(--shadow-medium);
+}
+
+/* Form Fields */
+.field {
+  margin-bottom: var(--space-lg);
+}
+
+.label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-md);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px var(--teal-faded);
+}
+
+.inputWithVoice {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.inputWithVoice .input {
+  flex: 1;
+}
+
+.optionsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.optionButton {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--cream-light);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.optionButton:hover {
+  border-color: var(--teal);
+  background: var(--teal-faded);
+}
+
+.optionSelected {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: var(--white);
+}
+
+.personalityOption:hover {
+  border-color: var(--gold);
+  background: var(--gold-faded);
+}
+
+.personalitySelected {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.backButton {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--white);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.backButton:hover {
+  border-color: var(--text-light);
+  background: var(--cream-light);
+}
+
+.saveButton {
+  flex: 2;
+  padding: var(--space-md) var(--space-lg);
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: 0 4px 12px rgba(58, 175, 169, 0.35);
+}
+
+.saveButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(58, 175, 169, 0.45);
+}
+
+.saveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: var(--space-lg);
+  }
+  
+  .cropActions,
+  .actions {
+    flex-direction: column;
+  }
+  
+  .retakeButton,
+  .processButton,
+  .backButton,
+  .saveButton {
+    flex: none;
+  }
+}

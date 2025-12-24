@@ -1,0 +1,361 @@
+/* ============================================
+   Scene Viewer Styles
+   ============================================ */
+
+.viewer {
+  padding: var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeIn var(--transition-medium) ease;
+}
+
+.container {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow-light);
+}
+
+.imageSection {
+  width: 100%;
+}
+
+.mainImage {
+  width: 100%;
+  display: block;
+}
+
+.infoSection {
+  padding: var(--space-xl);
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.location {
+  font-size: 0.9rem;
+  color: var(--teal-dark);
+}
+
+.date {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.sectionTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+.animalsSection {
+  margin-bottom: var(--space-xl);
+}
+
+.animalsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.animalChip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  background: var(--cream-light);
+  border-radius: var(--radius-full);
+}
+
+.animalEmoji {
+  font-size: 1.25rem;
+}
+
+.animalName {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.captionSection {
+  margin-bottom: var(--space-xl);
+}
+
+.captionDisplay {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--cream-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.captionDisplay:hover {
+  background: var(--cream-dark);
+}
+
+.captionPlaceholder {
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.editIcon {
+  margin-left: auto;
+  opacity: 0.5;
+}
+
+.captionEdit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.captionInput {
+  width: 100%;
+  padding: var(--space-md);
+  border: 2px solid var(--teal);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.captionInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--teal-faded);
+}
+
+.captionActions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: flex-end;
+}
+
+.captionCancel {
+  padding: var(--space-sm) var(--space-md);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.captionSave {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--teal);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.voiceSection {
+  margin-bottom: var(--space-xl);
+}
+
+.voicePlayer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--cream-light);
+  border-radius: var(--radius-md);
+}
+
+.playButton {
+  width: 48px;
+  height: 48px;
+  background: var(--teal);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.playButton:hover {
+  background: var(--teal-dark);
+  transform: scale(1.05);
+}
+
+.voiceInfo {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.deleteVoice {
+  padding: var(--space-sm);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.deleteVoice:hover {
+  opacity: 1;
+}
+
+.recording {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  background: rgba(231, 76, 60, 0.1);
+  border: 2px solid rgba(231, 76, 60, 0.3);
+  border-radius: var(--radius-md);
+}
+
+.recordingIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--error);
+  font-weight: 600;
+}
+
+.recordingDot {
+  width: 12px;
+  height: 12px;
+  background: var(--error);
+  border-radius: var(--radius-full);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.recordingActions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.cancelRecord {
+  padding: var(--space-sm) var(--space-md);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.stopRecord {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--error);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.recordButton {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--cream-light);
+  border: 2px dashed var(--cream-dark);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.recordButton:hover {
+  border-color: var(--coral);
+  background: var(--coral-faded);
+  color: var(--coral);
+}
+
+.noRecording {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.allImagesSection {
+  margin-bottom: var(--space-xl);
+}
+
+.toggleImages {
+  width: 100%;
+  padding: var(--space-md);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.toggleImages:hover {
+  color: var(--teal);
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.gridImage {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 3px solid transparent;
+}
+
+.chosenImage {
+  border-color: var(--gold);
+}
+
+.closeButton {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--white);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.closeButton:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+@media (max-width: 480px) {
+  .infoSection {
+    padding: var(--space-lg);
+  }
+}

@@ -1,0 +1,265 @@
+/* ============================================
+   Animals Page Styles
+   ============================================ */
+
+.page {
+  padding: var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeIn var(--transition-medium) ease;
+}
+
+/* Create Buttons */
+.createButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.createButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  background: var(--white);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-medium);
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+.createButton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.dreamButton {
+  border-color: var(--lavender-faded);
+}
+
+.dreamButton:hover {
+  border-color: var(--lavender);
+  background: var(--lavender-faded);
+}
+
+.toyButton {
+  border-color: var(--teal-faded);
+}
+
+.toyButton:hover {
+  border-color: var(--teal);
+  background: var(--teal-faded);
+}
+
+.createIcon {
+  font-size: 2rem;
+}
+
+.createText {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+/* Section Header */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.count {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  background: var(--cream-dark);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+}
+
+/* Empty State */
+.empty {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+  opacity: 0.6;
+}
+
+.emptyText {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.emptyHint {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* Animals Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-md);
+}
+
+/* Animal Card */
+.card {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px var(--shadow-light);
+  overflow: hidden;
+  transition: all var(--transition-medium);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.cardMain {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cardEmoji {
+  font-size: 3.5rem;
+}
+
+.toyBadge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 28px;
+  height: 28px;
+  background: var(--white);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px var(--shadow-medium);
+}
+
+.cardInfo {
+  padding: var(--space-md);
+}
+
+.cardName {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardSpecies {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.cardColors {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.colorDot {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--white);
+  box-shadow: 0 1px 3px var(--shadow-light);
+}
+
+.cardPersonality {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  background: var(--teal-faded);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.deleteButton {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 1.25rem;
+  color: var(--text-light);
+  cursor: pointer;
+  opacity: 0;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover .deleteButton {
+  opacity: 1;
+}
+
+.deleteButton:hover {
+  background: var(--error);
+  color: var(--white);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .createButtons {
+    grid-template-columns: 1fr;
+  }
+  
+  .createButton {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .deleteButton {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,235 @@
+/* ============================================
+   Storybook Page Styles
+   ============================================ */
+
+.page {
+  padding: var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeIn var(--transition-medium) ease;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+}
+
+.title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.count {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  background: var(--cream-dark);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+}
+
+/* Empty State */
+.empty {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 8px 32px var(--shadow-light);
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: var(--space-lg);
+  opacity: 0.6;
+}
+
+.emptyTitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.emptyText {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.createButton {
+  padding: var(--space-md) var(--space-xl);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(232, 184, 93, 0.35);
+  transition: all var(--transition-medium);
+}
+
+.createButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(232, 184, 93, 0.45);
+}
+
+/* Scenes Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* Scene Card */
+.card {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px var(--shadow-light);
+  overflow: hidden;
+  transition: all var(--transition-medium);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow-medium);
+}
+
+.cardMain {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cardPlaceholder {
+  font-size: 3rem;
+  opacity: 0.4;
+}
+
+.voiceBadge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 32px;
+  height: 32px;
+  background: var(--white);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px var(--shadow-medium);
+}
+
+.cardInfo {
+  padding: var(--space-md);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardAnimals {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardLocation {
+  font-size: 0.8rem;
+  color: var(--teal-dark);
+  background: var(--teal-faded);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.deleteButton {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 1.5rem;
+  color: var(--text-light);
+  cursor: pointer;
+  opacity: 0;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.card:hover .deleteButton {
+  opacity: 1;
+}
+
+.deleteButton:hover {
+  background: var(--error);
+  color: var(--white);
+}
+
+/* Add More */
+.addMore {
+  margin-top: var(--space-xl);
+  text-align: center;
+}
+
+.addButton {
+  padding: var(--space-md) var(--space-xl);
+  background: var(--white);
+  border: 2px dashed var(--cream-dark);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.addButton:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: var(--teal-faded);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .deleteButton {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,339 @@
+/* ============================================
+   Dream Animal Form Styles
+   ============================================ */
+
+.page {
+  padding: var(--space-md);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn var(--transition-medium) ease;
+}
+
+.form {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: 0 8px 32px var(--shadow-light);
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xs);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.error {
+  background: rgba(231, 76, 60, 0.1);
+  border: 2px solid rgba(231, 76, 60, 0.3);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--error);
+}
+
+.errorIcon {
+  font-size: 1.25rem;
+}
+
+.field {
+  margin-bottom: var(--space-lg);
+}
+
+.label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-md);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px var(--teal-faded);
+}
+
+.inputWithVoice {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.inputWithVoice .input {
+  flex: 1;
+}
+
+/* Species Grid */
+.speciesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.speciesButton {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--cream-light);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.speciesButton:hover {
+  border-color: var(--teal);
+  background: var(--teal-faded);
+}
+
+.speciesSelected {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: var(--white);
+}
+
+.speciesSelected:hover {
+  background: var(--teal-dark);
+}
+
+/* Colors */
+.colorSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.colorField {
+  display: flex;
+  flex-direction: column;
+}
+
+.colorPicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.colorSwatch {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.colorSwatch:hover {
+  transform: scale(1.1);
+}
+
+.colorSelected {
+  border-color: var(--text-primary);
+  box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--teal);
+}
+
+.colorInput {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Personality Grid */
+.personalityGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.personalityButton {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--cream-light);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.personalityButton:hover {
+  border-color: var(--gold);
+  background: var(--gold-faded);
+}
+
+.personalitySelected {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* Portrait Section */
+.portraitSection {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--cream-light);
+  border-radius: var(--radius-lg);
+}
+
+.portraitPreview {
+  text-align: center;
+}
+
+.portraitImage {
+  width: 100%;
+  max-width: 300px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px var(--shadow-medium);
+  margin-bottom: var(--space-md);
+}
+
+.generateButton {
+  width: 100%;
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--lavender) 0%, var(--lavender-light) 100%);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  transition: all var(--transition-medium);
+}
+
+.generateButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(184, 169, 201, 0.4);
+}
+
+.generateButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.regenerateButton {
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--white);
+  border: 2px solid var(--lavender);
+  border-radius: var(--radius-full);
+  color: var(--lavender);
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.regenerateButton:hover:not(:disabled) {
+  background: var(--lavender-faded);
+}
+
+.sparkles {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: var(--space-md);
+  margin-bottom: 0;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.cancelButton {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--white);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cancelButton:hover {
+  border-color: var(--text-light);
+  background: var(--cream-light);
+}
+
+.saveButton {
+  flex: 2;
+  padding: var(--space-md) var(--space-lg);
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: 0 4px 12px rgba(58, 175, 169, 0.35);
+}
+
+.saveButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(58, 175, 169, 0.45);
+}
+
+.saveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .form {
+    padding: var(--space-lg);
+  }
+  
+  .colorSection {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .cancelButton,
+  .saveButton {
+    flex: none;
+  }
+}

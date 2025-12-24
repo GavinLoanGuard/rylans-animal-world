@@ -1,0 +1,304 @@
+/* ============================================
+   Parent Mode Styles
+   ============================================ */
+
+.page {
+  padding: var(--space-md);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn var(--transition-medium) ease;
+}
+
+.container {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: 0 8px 32px var(--shadow-light);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xs);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+}
+
+.message {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  font-weight: 600;
+}
+
+.success {
+  background: rgba(39, 174, 96, 0.1);
+  color: var(--success);
+  border: 2px solid rgba(39, 174, 96, 0.3);
+}
+
+.error {
+  background: rgba(231, 76, 60, 0.1);
+  color: var(--error);
+  border: 2px solid rgba(231, 76, 60, 0.3);
+}
+
+.section {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.sectionDesc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+}
+
+.sectionDesc small {
+  color: var(--text-light);
+}
+
+.apiKeyField {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.input,
+.select {
+  flex: 1;
+  padding: var(--space-md);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.clearKeyButton {
+  padding: var(--space-md);
+  background: var(--cream-light);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clearKeyButton:hover {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.securityNote {
+  font-size: 0.8rem;
+  color: var(--warning);
+  margin-top: var(--space-sm);
+}
+
+.field {
+  margin-bottom: var(--space-lg);
+}
+
+.label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+.countButtons {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.countButton {
+  width: 48px;
+  height: 48px;
+  background: var(--cream-light);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.countButton:hover {
+  border-color: var(--teal);
+}
+
+.countActive {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--white);
+}
+
+.hint {
+  display: block;
+  margin-top: var(--space-sm);
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  cursor: pointer;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggleSlider {
+  width: 52px;
+  height: 28px;
+  background: var(--cream-dark);
+  border-radius: var(--radius-full);
+  position: relative;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.toggleSlider::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  background: var(--white);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.toggle input:checked + .toggleSlider {
+  background: var(--teal);
+}
+
+.toggle input:checked + .toggleSlider::after {
+  left: 28px;
+}
+
+.toggleLabel {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.toggleLabel small {
+  font-weight: 400;
+  color: var(--text-light);
+  font-family: var(--font-body);
+}
+
+.saveButton {
+  width: 100%;
+  padding: var(--space-md);
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: var(--space-xl);
+  transition: all var(--transition-medium);
+  box-shadow: 0 4px 12px rgba(58, 175, 169, 0.35);
+}
+
+.saveButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(58, 175, 169, 0.45);
+}
+
+.dataButtons {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.dataButton {
+  flex: 1;
+  padding: var(--space-md);
+  background: var(--cream-light);
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dataButton:hover:not(:disabled) {
+  border-color: var(--teal);
+  background: var(--teal-faded);
+}
+
+.dataButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dangerButton {
+  width: 100%;
+  padding: var(--space-md);
+  background: none;
+  border: 2px solid var(--error);
+  border-radius: var(--radius-md);
+  color: var(--error);
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dangerButton:hover {
+  background: var(--error);
+  color: var(--white);
+}
+
+.closeButton {
+  width: 100%;
+  padding: var(--space-md);
+  background: none;
+  border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: var(--space-lg);
+  transition: all var(--transition-fast);
+}
+
+.closeButton:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
