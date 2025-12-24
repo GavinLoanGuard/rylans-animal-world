@@ -75,11 +75,6 @@ export function SceneMaker({
       return;
     }
 
-    if (!settings.openaiApiKey) {
-      setError('No API key set! Ask a grown-up to add one in Parent Mode. 🔑');
-      return;
-    }
-
     setError(null);
     setIsGenerating(true);
     setStep('generating');
